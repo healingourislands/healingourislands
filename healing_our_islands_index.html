@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healing Our Islands</title>
+  <meta name="description" content="Healing Our Islands — From Disrupted History to Grounding Coherence." />
+  <style>
+    :root {
+      --ink: #2f3e3a;
+      --olive: #73755d;
+      --blue: #5f7894;
+      --mist: #dfe5df;
+      --sand: #ece8e0;
+      --cream: #f6f4ef;
+      --line: rgba(47, 62, 58, 0.14);
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.5;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 3rem));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: clamp(1.3rem, 2vw, 2rem);
+      letter-spacing: 0.02em;
+      color: var(--blue);
+      margin: 0 0 2rem;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      overflow: hidden;
+      color: var(--olive);
+      background:
+        linear-gradient(rgba(244, 245, 240, 0.58), rgba(244, 245, 240, 0.58)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+    }
+
+    .hero-inner {
+      padding: 4rem 0 2rem;
+    }
+
+    h1, h2, h3, blockquote {
+      font-weight: 400;
+      line-height: 1.08;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(3.4rem, 9vw, 7.4rem);
+      letter-spacing: -0.03em;
+    }
+
+    .tagline {
+      margin-top: 2rem;
+      font-size: clamp(1.4rem, 3vw, 2.8rem);
+      color: var(--blue);
+      font-style: italic;
+    }
+
+    .hero-meta,
+    .footer-meta {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #fff;
+      position: absolute;
+      left: 0;
+      bottom: 1.8rem;
+      padding: 0 3rem;
+    }
+
+    .section {
+      padding: 5.5rem 0;
+    }
+
+    .why {
+      background: #fff;
+    }
+
+    .lead {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+      line-height: 1.45;
+      max-width: 980px;
+      color: #5a6f69;
+    }
+
+    .body-copy {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1.8rem;
+      max-width: 1200px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(1.15rem, 2vw, 1.9rem);
+      line-height: 1.6;
+      color: #5a6f69;
+    }
+
+    .approach {
+      background:
+        linear-gradient(rgba(221, 229, 221, 0.88), rgba(221, 229, 221, 0.88)),
+        radial-gradient(circle at top left, rgba(255,255,255,0.35), transparent 42%),
+        radial-gradient(circle at bottom right, rgba(122,142,131,0.2), transparent 32%),
+        var(--mist);
+    }
+
+    .approach-statement,
+    .work-statement,
+    .image-statement {
+      text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      color: #50685b;
+      font-size: clamp(2rem, 4vw, 4rem);
+    }
+
+    .cards-wrap {
+      background: var(--sand);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 2rem 0 0;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .card {
+      padding: 2.2rem 2rem 3rem;
+      border-left: 1px solid var(--line);
+      min-height: 390px;
+    }
+
+    .card:first-child { border-left: 0; }
+
+    .card-number {
+      font-size: 3.2rem;
+      color: rgba(115, 117, 93, 0.22);
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+      color: #4e674f;
+    }
+
+    .card p {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #61736e;
+    }
+
+    .image-banner {
+      min-height: 52vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background:
+        linear-gradient(rgba(236, 242, 246, 0.7), rgba(236, 242, 246, 0.7)),
+        url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+      color: var(--blue);
+    }
+
+    .how-we-work {
+      background:
+        linear-gradient(rgba(221, 229, 221, 0.92), rgba(221, 229, 221, 0.92)),
+        radial-gradient(circle at top center, rgba(255,255,255,0.32), transparent 40%),
+        var(--mist);
+    }
+
+    .work-copy {
+      max-width: 1050px;
+      margin: 2.5rem auto 0;
+      text-align: center;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(1.25rem, 2vw, 2rem);
+      line-height: 1.6;
+      color: var(--blue);
+    }
+
+    .bios {
+      background: #f3f3f1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    
+    
+    
+    .bios h2 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      color: var(--olive);
+      margin-bottom: 3rem;
+    }
+
+    .bio-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: 8rem;
+      row-gap: 2rem;
+      align-items: start;
+      z-index: 1;
+    }
+
+    .bio {
+      display: contents;
+    }
+
+    .bio-text {
+      font-size: clamp(1.1rem, 1.55vw, 1.45rem);
+      line-height: 1.35;
+      color: #181818;
+      margin: 0;
+      max-width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bio-text strong {
+      font-weight: 700;
+    }
+
+    .marjadi-text {
+      grid-column: 1;
+      grid-row: 1;
+      align-self: end;
+      margin-top: 8rem;
+    }
+
+    .vivianna-photo-wrap {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: start;
+      position: relative;
+      z-index: 3;
+    }
+
+    .marjadi-photo-wrap {
+      grid-column: 1;
+      grid-row: 2;
+      justify-self: center;
+      position: relative;
+      z-index: 3;
+      margin-top: -1.5rem;
+    }
+
+    .vivianna-text {
+      grid-column: 2;
+      grid-row: 2;
+      align-self: start;
+      margin-top: 5.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bio-photo {
+      width: min(100%, 290px);
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(145deg, #d5d5d1, #b7bbb6);
+      overflow: hidden;
+    }
+
+    .bio-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    .three-column {
+      background: #6985a0;
+      color: #fff;
+    }
+
+    .three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .three-grid h3 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      margin-bottom: 2.2rem;
+      color: #17231f;
+    }
+
+    .three-grid p,
+    .three-grid li {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.8rem);
+      line-height: 1.9;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .three-grid ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .quote-section {
+      background: var(--sand);
+      text-align: center;
+      padding: 6rem 0 4rem;
+    }
+
+    blockquote {
+      max-width: 1150px;
+      margin: 0 auto;
+      font-size: clamp(1.8rem, 3vw, 3.2rem);
+      font-style: italic;
+      color: #2b2927;
+    }
+
+    .connect {
+      background:
+        linear-gradient(rgba(221, 229, 221, 0.92), rgba(221, 229, 221, 0.92)),
+        var(--mist);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .connect-copy {
+      margin-top: 4rem;
+      font-size: clamp(2rem, 4vw, 4rem);
+      color: var(--blue);
+    }
+
+    .connect-copy a {
+      display: inline-block;
+      margin-top: 0.4rem;
+    }
+
+    .footer-meta {
+      position: static;
+      margin-top: 8rem;
+      padding: 0;
+      color: #fff;
+    }
+
+    @media (max-width: 1100px) {
+      .cards-grid,
+      .three-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bio-grid {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+      }
+
+      .marjadi-text,
+      .vivianna-photo-wrap,
+      .marjadi-photo-wrap,
+      .vivianna-text {
+        grid-column: 1;
+        grid-row: auto;
+        margin-top: 0;
+        justify-self: start;
+      }
+
+      
+
+      
+
+      .card {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        min-height: auto;
+      }
+
+      .card:first-child {
+        border-top: 0;
+      }
+    }
+
+      .card {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        min-height: auto;
+      }
+
+      .card:first-child {
+        border-top: 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(var(--max), calc(100% - 1.5rem));
+      }
+
+      .hero-meta,
+      .footer-meta {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.7rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+      }
+
+      .hero-meta {
+        padding: 0 1rem;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-inner">
+      <h1>Healing Our Islands</h1>
+      <p class="tagline">From Disrupted History to Grounding Coherence</p>
+    </div>
+    <div class="hero-meta" aria-label="Site themes">
+      <span>Collective Leadership</span>
+      <span>Island Wisdom</span>
+      <span>Regenerative Futures</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="section why" id="why">
+      <div class="container">
+        <p class="eyebrow">Why</p>
+        <p class="lead">Across the world, islands carry both deep wisdom and deep wounds.</p>
+        <div class="body-copy">
+          <p>Histories of colonialism, displacement, and environmental degradation have left lasting impacts on leadership structures, community relationships, and the connection between people and their ecosystem — air, land and water.</p>
+          <p>Yet, islands hold profound ancestral knowledge, cultural resilience, and practices that offer powerful pathways for healing and regeneration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section approach" id="approach">
+      <div class="container">
+        <p class="eyebrow">Our Approach</p>
+        <h2 class="approach-statement">At the root of systemic fragmentation, our work begins by acknowledging both the wounds and the wisdom.</h2>
+      </div>
+    </section>
+
+    <section class="cards-wrap" id="what-we-do">
+      <div class="container">
+        <p class="eyebrow">What We Do</p>
+      </div>
+      <div class="container cards-grid">
+        <article class="card">
+          <div class="card-number">01</div>
+          <h3>Leadership</h3>
+          <p>We work with leaders to transform the inner armour that once protected them, enabling them to meet themselves and others with clarity and relational capacity.</p>
+        </article>
+        <article class="card">
+          <div class="card-number">02</div>
+          <h3>Governance</h3>
+          <p>We support governance processes rooted in deep listening — to people, land, and ancestors — renewing how decisions are made.</p>
+        </article>
+        <article class="card">
+          <div class="card-number">03</div>
+          <h3>Acknowledgement</h3>
+          <p>We create spaces to acknowledge the pain of history, not to remain there, but to restore freedom and responsibility.</p>
+        </article>
+        <article class="card">
+          <div class="card-number">04</div>
+          <h3>Intelligence</h3>
+          <p>We work with the intelligence of ecosystems and ancestral knowledge, helping systems recognise barriers and restore flow.</p>
+        </article>
+        <article class="card">
+          <div class="card-number">05</div>
+          <h3>Collective</h3>
+          <p>We guide the shift from collective trauma to collective agency, by recognising patterns and activating the human capacities within networks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="image-banner section" aria-label="Statement image section">
+      <div class="container">
+        <h2 class="image-statement">It is time to do the difficult part, going to the root of the problem, transforming from within our systems.</h2>
+      </div>
+    </section>
+
+    <section class="section how-we-work" id="how-we-work">
+      <div class="container">
+        <p class="eyebrow" style="color:#ffffff;">How We Work</p>
+        <h2 class="work-statement">This work takes place through facilitated dialogues, leadership processes, and collective learning spaces.</h2>
+        <p class="work-copy">We guide leaders, communities, and organisations into new ways of being, grounded in systems awareness and the intelligence of the islands.</p>
+      </div>
+    </section>
+
+    <section class="section bios" id="who-we-are">
+      <div class="container">
+        <h2>We Create Islands of Coherence</h2>
+        <div class="bio-grid">
+          <p class="bio-text marjadi-text"><strong>MARJADI KOOISTRA</strong> is a governance architect, ocean advocate, facilitator, and executive coach whose work connects inner transformation with systemic renewal. With a background in corporate and institutional environments, she brings extensive experience in finance, multi-stakeholder and leadership development. Rooted in her island Indonesian lineage, she is committed to restoring balance between people, capital, and the living world. She designs governance structures for regenerative initiatives while facilitating spaces where individuals and communities reconnect with identity beyond conditioning, complexity, and inherited patterns. Her work supports restoration that begins within and unfolds through how systems organise, collaborate, and steward ecosystems.</p>
+
+          <div class="bio-photo-wrap vivianna-photo-wrap">
+            <div class="bio-photo">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Portrait placeholder for Vivianna Rodriguez Carreon" />
+            </div>
+          </div>
+
+          <div class="bio-photo-wrap marjadi-photo-wrap">
+            <div class="bio-photo">
+              <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=80" alt="Portrait placeholder for Marjadi Kooistra" />
+            </div>
+          </div>
+
+          <p class="bio-text vivianna-text"><strong>VIVIANNA RODRIGUEZ CARREON</strong> is an interdisciplinary social scientist and consultant whose work focuses on collective trauma, agency, and systemic transformation. With a background in academia, she integrates scholarship on inner development and sustainable leadership with research-informed facilitation processes that support communities navigating conflict, migration, and structural inequality. Through international collaborations and collective integration labs, she advances approaches to collective healing that honour cultural context, lived experience, and relational capacity. Rooted in the mountains of Peru, her work bridges academic research and practice to strengthen communal resilience, governance, and long-term social transformation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section three-column" id="summary">
+      <div class="container three-grid">
+        <div>
+          <h3>What we do</h3>
+          <p>We work with leaders, communities, and organisations to heal systemic fragmentation and restore coherence.</p>
+        </div>
+        <div>
+          <h3>How we do it</h3>
+          <ul>
+            <li>Facilitated dialogues</li>
+            <li>Leadership programs</li>
+            <li>Collective healing spaces</li>
+            <li>Systems awareness practices</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Who it is for</h3>
+          <ul>
+            <li>Leaders and governance bodies</li>
+            <li>Island communities</li>
+            <li>Organisations in place</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="container">
+        <blockquote>“A shell before it speaks. So do we, to history, to land, to communities, and to the future we are co-creating together.”</blockquote>
+      </div>
+    </section>
+
+    <section class="section connect" id="contact">
+      <div class="container">
+        <p class="eyebrow">Connect</p>
+        <div class="connect-copy">
+          <div>Start a conversation:</div>
+          <a href="mailto:healingourislands@gmail.com">healingourislands@gmail.com</a>
+        </div>
+        <div class="footer-meta" aria-label="Site themes footer">
+          <span>Collective Leadership</span>
+          <span>Island Wisdom</span>
+          <span>Regenerative Futures</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
