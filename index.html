@@ -197,7 +197,7 @@ h2 {
       text-align: center;
       background:
         linear-gradient(rgba(236, 242, 246, 0.7), rgba(236, 242, 246, 0.7)),
-        url("images/hero.jpg") center/cover no-repeat;
+        url("images/images/banner.jpg") center/cover no-repeat;
       color: var(--blue);
     }
 
@@ -228,9 +228,10 @@ h2 {
     
     
     .bios h2 {
-      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-size: clamp(3.6rem, 6vw, 5.2rem);
+      line-height: 1.05;
       color: var(--olive);
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
     }
 
     .bio-grid {
@@ -279,7 +280,7 @@ h2 {
     .marjadi-photo-wrap {
       grid-column: 1;
       grid-row: 2;
-      justify-self: center;
+      justify-self: start;
       position: relative;
       z-index: 3;
       margin-top: 4rem;
@@ -289,7 +290,7 @@ h2 {
       grid-column: 2;
       grid-row: 2;
       align-self: start;
-      margin-top: -5rem;
+      margin-top: -6.5rem;
       position: relative;
       z-index: 2;
     }
@@ -394,26 +395,11 @@ h2 {
       .vivianna-photo-wrap,
       .marjadi-photo-wrap,
       .vivianna-text {
-        grid-column: 2;
-  grid-row: 2;
-  align-self: start;
-  margin-top: -2rem !important;
+        grid-column: 1;
+        grid-row: auto;
+        margin-top: 0;
+        justify-self: start;
       }
-
-      
-
-      
-
-      .card {
-        border-left: 0;
-        border-top: 1px solid var(--line);
-        min-height: auto;
-      }
-
-      .card:first-child {
-        border-top: 0;
-      }
-    }
 
       .card {
         border-left: 0;
@@ -448,12 +434,21 @@ h2 {
       .section {
         padding: 4rem 0;
       }
-section.bios h2,
-.section.bios h2,
-#who-we-are h2 {
-  font-size: 6rem !important;
-  color: red !important;
-}
+    }
+
+    /* Final desktop refinements */
+    #who-we-are h2 {
+      font-size: clamp(3.6rem, 6vw, 5.2rem);
+      line-height: 1.05;
+    }
+
+    @media (min-width: 1101px) {
+      .vivianna-text {
+        margin-top: -6.5rem;
+      }
+      .marjadi-photo-wrap {
+        margin-top: 4rem;
+      }
     }
   </style>
 </head>
