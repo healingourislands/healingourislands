@@ -449,7 +449,28 @@ h2 {
       .marjadi-photo-wrap {
         margin-top: 4rem;
       }
-    }
+    } 
+    @media (min-width: 1101px) {
+  .vivianna-text {
+    margin-top: -6.5rem;
+  }
+
+  .marjadi-photo-wrap {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bio-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .vivianna-text { order: 1 !important; }
+  .vivianna-photo-wrap { order: 2 !important; }
+  .marjadi-photo-wrap { order: 3 !important; }
+  .marjadi-text { order: 4 !important; }
+}
   </style>
 </head>
 <body>
